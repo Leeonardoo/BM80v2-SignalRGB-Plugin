@@ -51,13 +51,13 @@ export function LedPositions() {
 }
 
 export function Initialize() {
-    ClearReadBuffer();
+    clearReadBuffer();
     checkFirmwareType();
     versionQMK();
     versionSignalRGBProtocol();
     uniqueIdentifier();
-    // device.repollLeds();
-    device.setControllableLeds();
+    device.repollLeds();
+    // device.setControllableLeds();
     effectEnable();
 }
 
@@ -88,7 +88,7 @@ function checkFirmwareType() {
 }
 
 //Clear Read buffer to get correct values out of our read functions
-function ClearReadBuffer(timeout = 10) {
+function clearReadBuffer(timeout = 10) {
     let count = 0;
     let readCounts = [];
 
